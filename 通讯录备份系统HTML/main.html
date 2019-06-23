@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>主界面</title>
+<link href="1.css" type="text/css" rel="stylesheet">
+</head>
+<script>
+	function skip(s){
+		window.location.href=s+".html";
+	}
+</script>
+<body>
+<h1>主界面</h1>
+<table align="center">
+	<tr>
+		<td><button class="b" onClick="skip('backup')">本地通讯录<br>备份</button></td>
+		<td><button class="b" onClick="skip('recover')">本地通讯录<br>恢复</button></td>
+	</tr>
+	<tr>
+		<td><button class="b" onClick="skip('book')">云端<br>通讯录</button></td>
+		<td><button class="b" onClick="skip('record')">云端<br>备份记录</button></td>
+	</tr>
+	<tr>
+		<td><button class="b" onClick="skip('auto')">自动备份<br>设置</button></td>
+		<td><button class="b" onClick="skip('index')">退出登录</button></td>
+	</tr>
+</table>
+</body>
+</html>
