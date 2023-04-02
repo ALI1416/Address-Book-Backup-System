@@ -1,0 +1,31 @@
+CREATE DATADASE backup;
+
+CREATE TABLE `user` (
+  `userId` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `userMobile` char(13) NOT NULL,
+  `userPwd` char(32) NOT NULL,
+  PRIMARY KEY (`userId`),
+  UNIQUE KEY `userMobile` (`userMobile`)
+);
+
+CREATE TABLE `addressbook` (
+  `abId` int(10) unsigned NOT NULL,
+  `abName` varchar(64) NOT NULL,
+  `abMobile` char(13) NOT NULL,
+  PRIMARY KEY (`abId`),
+  UNIQUE KEY `abName` (`abName`,`abMobile`)
+);
+
+CREATE TABLE `bakcuprecord` (
+  `brId` int(10) unsigned NOT NULL,
+  `abId` int(10) unsigned NOT NULL,
+  PRIMARY KEY (`brId`,`abId`)
+);
+
+CREATE TABLE `userset` (
+  `userId` int(10) unsigned NOT NULL,
+  `usBackupAuto` tinyint(4) NOT NULL,
+  `usUpdataAuto` int(11) NOT NULL,
+  `usAutoInterval` tinyint(4) NOT NULL,
+  PRIMARY KEY (`userId`)
+);
